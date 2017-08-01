@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <title>HASS Editor</title>
+    <script src="javascripts/vendor/jquery.js"></script>
+    <link rel="stylesheet" href="stylesheets/chosen.min.css" />
+    <link rel="stylesheet" href="stylesheets/vax.css" />
+
+    <script src="javascripts/vendor/underscore.js"></script>
+    <script src="javascripts/vendor/raphael.js"></script>
+    <script src="javascripts/vendor/raphael-paragraph.js"></script>
+    <script src="javascripts/vendor/chosen/chosen.jquery.js"></script>
+    <script src="javascripts/vax.js"></script>
+    <script src="https://aveic.github.io/vax/examples/calc/schema.js"></script>
+  </head>
+
+  <body>
+    <div id='vax-hass-editor' style="position: absolute; top: 0; left: 0;"></div>
+
+    <script>
+$(function() {
+        var screenHeight = (window.innerHeight > 0) ? window.innerHeight : screen.height;
+        var screenWidth  = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+
+        $('#vax-hass-editor').css({width: screenWidth, height: screenHeight});
+
+        window.myVAX = new VAX('vax-hass-editor', {schema: exampleSchema});
+});
+    </script>
+
+  </body>
+</html>

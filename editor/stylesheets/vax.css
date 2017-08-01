@@ -1,0 +1,296 @@
+/* ===BIG STUFF */
+.vax-text-unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.vax-wrapper {
+    outline:2px solid black;
+    position: relative;
+}
+
+    .vax-canvas {
+        position: absolute;
+        background: url("vax-grid.png") #222 repeat;
+        left: 41px;
+        top: 41px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .vax-minimap {
+        position: absolute;
+        background: #222;
+        bottom: 0;
+        right: 0;
+        border: 1px solid #999;
+    }
+
+    .vax-toolbar {
+        position: absolute;
+        width: 40px;
+        background: #222;
+        top: 0;
+        bottom: 0;
+        text-align: center;
+    }
+
+        .vax-toolbar-btn {
+            width: 32px;
+            height: 32px;
+            margin: 8px auto;
+            text-align: center;
+            border: 1px solid silver;
+            border-radius: 3px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            background: #555;
+            vertical-align: middle;
+        }
+
+    .vax-tabs-wrapper {
+        position: absolute;
+        height: 40px;
+        background: #333;
+        left: 41px;
+        right: 0;
+        top: 0;
+        text-align: left;
+        padding: 0 10px;
+        overflow: hidden;
+    }
+
+        .vax-tab {
+            height: 20px;
+            padding: 3px 15px 30px 10px;
+            text-align: center;
+            min-width: 60px;
+            display: inline-block;
+            border: 2px solid #000;
+            position: relative;
+            border-bottom: none;
+            top: 10px;
+            border-radius: 4px;
+            color: white;
+            background: #444;
+            cursor: pointer;
+        }
+
+            .vax-tab-is-active {
+                border-color: orange;
+                font-weight: bold;
+                color: orange;
+                cursor: default;
+            }
+
+            .vax-tab-close {
+                position: absolute;
+                width: 12px;
+                height: 12px;
+                top: 2px;
+                right: 2px;
+                font-family: Tahoma;
+                font-size: 8px;
+                font-weight: normal;
+                color: white;
+                background: black;
+                border-radius: 4px;
+                border: 1px solid silver;
+                cursor: pointer;
+            }
+
+                .vax-tab-close:hover {
+                    background: #bbb;
+                    color: #000;
+                    border-color: #000;
+                }
+
+    .vax-is-panning {
+        cursor: url('closedhand.cur'), default;
+    }
+
+    .vax-overlay {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        border: none;
+        opacity: .5;
+    }
+
+        .vax-overlay-visible {
+            display: block;
+        }
+
+    /* ===SCROLLBARS */
+    .vax-scrollbar {
+        position: absolute;
+        background: #333;
+    }
+
+    .vax-horiz-scrollbar {
+        height: 20px;
+        bottom: 0px;
+        left: 40px;
+        right: 20px;
+    }
+
+    .vax-vert-scrollbar {
+        width: 20px;
+        top: 40px;
+        right: 0px;
+        bottom: 20px;
+    }
+
+        .vax-sb-slider {
+            position: absolute;
+            background: #666;
+        }
+
+            .vax-sb-slider:hover {
+                background: #444;
+            }
+
+        .vax-horiz-sb-slider {
+            left: 20px;
+            height: 20px;
+        }
+
+        .vax-vert-sb-slider {
+            width: 20px;
+            top: 20px;
+        }
+
+        .vax-sb-spinner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #999;
+            color: #222;
+            text-align: center;
+        }
+
+            .vax-sb-spinner:hover, .vax-sb-slider-dragging {
+                background: #777;
+                color: #000;
+            }
+
+        .vax-hsb-left-spinner {
+            top: 0;
+            left: 0;
+        }
+
+        .vax-hsb-right-spinner {
+            top: 0;
+            right: 0;
+        }
+
+        .vax-vsb-top-spinner {
+            top: 0;
+            left: 0;
+        }
+
+        .vax-vsb-bottom-spinner {
+            bottom: 0;
+            left: 0;
+        }
+
+    /* ===DIALOGS */
+    .vax-dlg {
+        background: #111;
+        border:2px solid #888;
+        border-radius: 5px;
+        box-shadow: #111 0 0 5px 2px;
+
+        position: absolute;
+        min-width: 50px;
+        min-height: 50px;
+    }
+
+        .vax-dlg input, .vax-dlg textarea {
+            color: black;
+        }
+
+        .vax-dlg-header {
+            padding: 6px;
+            color: #ddd;
+            font-weight: bold;
+            font-family: "Georgia", "Times New Roman", serif;
+            font-variant: small-caps;
+            border-bottom: 1px solid #888;
+            background: #333;
+        }
+
+        .vax-dlg-body {
+            padding: 10px 6px;
+            color: white;
+        }
+
+        .vax-dlg-footer {
+            border-top: 1px solid #888;
+            background: #222;
+            padding: 6px;
+            text-align: right;
+        }
+
+        .vax-dlg-btn {
+            background: #333;
+            color: #aaa;
+            border: 1px solid #111;
+
+            border-radius: 2px;
+            padding: 2px 6px;
+            display: inline-block;
+            margin-left: 3px;
+        }
+
+            .vax-dlg-btn:hover {
+                background: #111;
+                color: #ccc;
+                border: 1px solid #555;
+
+            }
+
+            .vax-dlg-btn:active {
+                background: #999;
+                color: #111;
+                border: 1px solid silver;
+            }
+
+            .vax-text-input {
+                border-radius: 5px;
+            }
+
+            .vax-text-input-wide {
+
+            }
+
+            .vax-memo {
+                font-family: "Lucida Console", "Tahoma", sans-serif;
+            }
+
+    /** ===TYPE PICKER */
+    .vax-type-picker {
+
+    }
+
+        .vax-type-picker-punct {
+            font-size: 14pt;
+        }
+
+        .vax-type-picker-signature {
+            margin: 10px 0 0 0;
+            border-top: 1px solid silver;
+            padding: 5px;
+            font-family: "Georgia";
+            color: orange;
+        }
+
+
