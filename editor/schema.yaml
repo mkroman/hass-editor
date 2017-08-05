@@ -1,0 +1,49 @@
+colors:
+  num: '0-#495-#075:20-#335'
+  str: 'red'
+  url: 'blue'
+  list: 'green'
+
+types:
+  Expr: # Expr extends Any
+    color: '#fff'
+    title: Expression
+  Integral: # Integral extends Expr
+    color: @num
+    extends: Expr # Expr extends Expr and Any
+  Numeric: # Numeric extends Integral
+    extends: Integral # Intergral extends Expr
+    color: @num
+  String:
+    extends: Expr # Expr extends Expr and Any
+    color: @str
+    title: Text
+  URL:
+    extends: String # String extends Expr and Any
+    title: URL
+    color: @url
+  List:
+    typeParams: [T]
+    color: @list
+    title: List
+
+components:
+  Automation:
+    in:
+      id: String
+      triggers: List
+      conditions: List
+      actions: List
+
+  NumericState:
+    out: 
+      
+    below: Numeric
+    above: Numeric
+    entity_id: String
+
+  Trigger:
+    in:
+      E: Event
+    out:
+
